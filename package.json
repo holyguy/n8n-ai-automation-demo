@@ -1,0 +1,8 @@
+{
+  "name": "ai-workflow-automation-demo",
+  "version": "1.0.0",
+  "description": "Interactive n8n + AI Workflow Automation Prototype",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
