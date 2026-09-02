@@ -7,46 +7,69 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.4); }
-      50% { box-shadow: 0 0 25px rgba(99, 102, 241, 0.8); }
+    /* Morandi Palette Custom Styles */
+    :root {
+      --morandi-bg: #191c1e;
+      --morandi-surface: #22262a;
+      --morandi-surface-light: #2b3136;
+      --morandi-border: #363d44;
+      --morandi-sage: #8da399;
+      --morandi-slate-blue: #7c8f9e;
+      --morandi-dusty-mauve: #9e8e9f;
+      --morandi-warm-sand: #c7b299;
+      --morandi-terracotta: #b88d85;
+      --morandi-text: #eceae4;
+      --morandi-subtext: #9fa6ad;
     }
-    .node-active { animation: pulse-glow 1.5s infinite; }
+    body {
+      background-color: var(--morandi-bg);
+      color: var(--morandi-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    @keyframes morandi-pulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(141, 163, 153, 0.25); }
+      50% { box-shadow: 0 0 20px rgba(141, 163, 153, 0.55); }
+    }
+    .node-active {
+      animation: morandi-pulse 1.5s infinite;
+      border-color: #8da399 !important;
+      background-color: rgba(141, 163, 153, 0.12) !important;
+    }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+<body class="min-h-screen antialiased">
 
-  <!-- Personalized Sincerity Banner -->
-  <div class="bg-gradient-to-r from-indigo-900/80 via-purple-900/80 to-slate-900 border-b border-indigo-500/30 px-4 py-2.5 text-xs text-center text-slate-200">
+  <!-- Personalized Morandi Banner -->
+  <div class="bg-[#24292e] border-b border-[#363d44] px-4 py-2.5 text-xs text-center text-[#d8d5cd]">
     <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2">
-        <span class="px-2 py-0.5 rounded bg-indigo-500 text-white font-semibold uppercase tracking-wider text-[10px]">Custom POC</span>
-        <span>Specially designed & developed for: <strong>Upwork Project — AI Automation Developer (n8n + OpenAI/Claude)</strong></span>
+        <span class="px-2 py-0.5 rounded bg-[#6e8278] text-[#f4f3ef] font-semibold uppercase tracking-wider text-[10px]">Custom POC</span>
+        <span>Specially designed for: <strong class="text-[#eceae4]">Upwork Project — AI Automation Developer (n8n + OpenAI/Claude)</strong></span>
       </div>
-      <div class="text-slate-400">
-        Engineered by: <span class="text-indigo-300 font-medium">Senior Python & Workflow Automation Engineer</span>
+      <div class="text-[#9fa6ad]">
+        Engineered by: <span class="text-[#8da399] font-medium">Senior Python & Workflow Automation Engineer</span>
       </div>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur sticky top-0 z-50">
+  <header class="border-b border-[#2e353c] bg-[#1d2125]/85 backdrop-blur sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-white shadow-lg">
+        <div class="w-10 h-10 rounded-xl bg-[#2e353c] border border-[#404953] flex items-center justify-center font-bold text-[#8da399] shadow-sm">
           <i class="fa-solid fa-bolt"></i>
         </div>
         <div>
-          <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+          <h1 class="text-base font-bold tracking-tight text-[#eceae4] flex items-center gap-2">
             AI Workflow Automation Engine
-            <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">n8n + Claude/OpenAI</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-[#2b333a] text-[#8da399] border border-[#3b454f]">n8n + Claude/OpenAI</span>
           </h1>
-          <p class="text-xs text-slate-400">Production-Ready Lead Intake, AI Parsing, CRM Sync & Alert Pipeline</p>
+          <p class="text-xs text-[#9fa6ad]">Production-Ready Lead Intake, AI Parsing, CRM Sync & Alert Pipeline</p>
         </div>
       </div>
       <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Interactive Demo
+        <span class="inline-flex items-center gap-1.5 text-xs text-[#8da399] bg-[#8da399]/10 px-2.5 py-1 rounded-full border border-[#8da399]/25">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#8da399] animate-pulse"></span> Live Interactive Demo
         </span>
       </div>
     </div>
@@ -56,48 +79,48 @@
   <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
 
     <!-- Step Visualizer Banner -->
-    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-2xl">
-      <h2 class="text-xs uppercase tracking-wider font-semibold text-slate-400 mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-diagram-project text-indigo-400"></i> n8n Visual Workflow Execution Pipeline
+    <div class="bg-[#212529] border border-[#2e353c] rounded-2xl p-6 shadow-xl">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-[#9fa6ad] mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-diagram-project text-[#7c8f9e]"></i> n8n Visual Workflow Execution Pipeline
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
         <!-- Node 1 -->
-        <div id="node-1" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 transition-all duration-300">
+        <div id="node-1" class="bg-[#282d33] border border-[#343b43] rounded-xl p-4 transition-all duration-300">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">1</div>
+            <div class="w-8 h-8 rounded-lg bg-[#7c8f9e]/20 text-[#7c8f9e] flex items-center justify-center font-bold text-sm">1</div>
             <div>
-              <div class="text-sm font-semibold text-white">Webhook Trigger</div>
-              <div class="text-xs text-slate-400">Receives Inbound Lead</div>
+              <div class="text-sm font-semibold text-[#eceae4]">Webhook Trigger</div>
+              <div class="text-xs text-[#9fa6ad]">Receives Inbound Lead</div>
             </div>
           </div>
         </div>
         <!-- Node 2 -->
-        <div id="node-2" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 transition-all duration-300">
+        <div id="node-2" class="bg-[#282d33] border border-[#343b43] rounded-xl p-4 transition-all duration-300">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">2</div>
+            <div class="w-8 h-8 rounded-lg bg-[#9e8e9f]/20 text-[#9e8e9f] flex items-center justify-center font-bold text-sm">2</div>
             <div>
-              <div class="text-sm font-semibold text-white">AI Engine (Claude)</div>
-              <div class="text-xs text-slate-400">Scores & Structures Data</div>
+              <div class="text-sm font-semibold text-[#eceae4]">AI Engine (Claude)</div>
+              <div class="text-xs text-[#9fa6ad]">Scores & Structures Data</div>
             </div>
           </div>
         </div>
         <!-- Node 3 -->
-        <div id="node-3" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 transition-all duration-300">
+        <div id="node-3" class="bg-[#282d33] border border-[#343b43] rounded-xl p-4 transition-all duration-300">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">3</div>
+            <div class="w-8 h-8 rounded-lg bg-[#8da399]/20 text-[#8da399] flex items-center justify-center font-bold text-sm">3</div>
             <div>
-              <div class="text-sm font-semibold text-white">CRM Integration</div>
-              <div class="text-xs text-slate-400">Syncs to Airtable/HubSpot</div>
+              <div class="text-sm font-semibold text-[#eceae4]">CRM Integration</div>
+              <div class="text-xs text-[#9fa6ad]">Syncs to Airtable/HubSpot</div>
             </div>
           </div>
         </div>
         <!-- Node 4 -->
-        <div id="node-4" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 transition-all duration-300">
+        <div id="node-4" class="bg-[#282d33] border border-[#343b43] rounded-xl p-4 transition-all duration-300">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">4</div>
+            <div class="w-8 h-8 rounded-lg bg-[#c7b299]/20 text-[#c7b299] flex items-center justify-center font-bold text-sm">4</div>
             <div>
-              <div class="text-sm font-semibold text-white">Slack / Email Alert</div>
-              <div class="text-xs text-slate-400">Notifies Sales Team</div>
+              <div class="text-sm font-semibold text-[#eceae4]">Slack / Email Alert</div>
+              <div class="text-xs text-[#9fa6ad]">Notifies Sales Team</div>
             </div>
           </div>
         </div>
@@ -108,121 +131,121 @@
       
       <!-- Left Column: Input Trigger Form -->
       <div class="lg:col-span-5 space-y-6">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-5">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <h3 class="font-bold text-slate-200 flex items-center gap-2">
-              <i class="fa-solid fa-paper-plane text-indigo-400"></i> Simulate Inbound Lead
+        <div class="bg-[#212529] border border-[#2e353c] rounded-2xl p-6 shadow-xl space-y-5">
+          <div class="flex items-center justify-between border-b border-[#2e353c] pb-3">
+            <h3 class="font-bold text-[#eceae4] flex items-center gap-2 text-sm">
+              <i class="fa-solid fa-paper-plane text-[#7c8f9e]"></i> Simulate Inbound Lead
             </h3>
-            <button onclick="loadSamplePreset()" class="text-xs text-indigo-400 hover:text-indigo-300 underline">Load Enterprise Sample</button>
+            <button onclick="loadSamplePreset()" class="text-xs text-[#8da399] hover:text-[#a5b9b0] underline transition-colors">Load Enterprise Sample</button>
           </div>
 
           <div class="space-y-4 text-sm">
             <div>
-              <label class="block text-xs font-medium text-slate-400 mb-1">Contact Name</label>
-              <input id="lead-name" type="text" value="David Miller" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-indigo-500 text-sm" />
+              <label class="block text-xs font-medium text-[#9fa6ad] mb-1">Contact Name</label>
+              <input id="lead-name" type="text" value="David Miller" class="w-full bg-[#181b1e] border border-[#343b43] rounded-lg px-3 py-2 text-[#eceae4] focus:outline-none focus:border-[#8da399] text-sm" />
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-400 mb-1">Email Address</label>
-              <input id="lead-email" type="email" value="david.m@vortexlogistics.com" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-indigo-500 text-sm" />
+              <label class="block text-xs font-medium text-[#9fa6ad] mb-1">Email Address</label>
+              <input id="lead-email" type="email" value="david.m@vortexlogistics.com" class="w-full bg-[#181b1e] border border-[#343b43] rounded-lg px-3 py-2 text-[#eceae4] focus:outline-none focus:border-[#8da399] text-sm" />
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-400 mb-1">Company & Team Size</label>
-              <input id="lead-company" type="text" value="Vortex Logistics (50+ employees)" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-indigo-500 text-sm" />
+              <label class="block text-xs font-medium text-[#9fa6ad] mb-1">Company & Team Size</label>
+              <input id="lead-company" type="text" value="Vortex Logistics (50+ employees)" class="w-full bg-[#181b1e] border border-[#343b43] rounded-lg px-3 py-2 text-[#eceae4] focus:outline-none focus:border-[#8da399] text-sm" />
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-400 mb-1">Inquiry / Message Body</label>
-              <textarea id="lead-message" rows="3" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-indigo-500 text-sm">We are looking to automate our daily inventory updates between Shopify, our ERP database, and Slack notifications. Budget is approved for Q3 implementation.</textarea>
+              <label class="block text-xs font-medium text-[#9fa6ad] mb-1">Inquiry / Message Body</label>
+              <textarea id="lead-message" rows="3" class="w-full bg-[#181b1e] border border-[#343b43] rounded-lg px-3 py-2 text-[#eceae4] focus:outline-none focus:border-[#8da399] text-sm">We are looking to automate our daily inventory updates between Shopify, our ERP database, and Slack notifications. Budget is approved for Q3 implementation.</textarea>
             </div>
           </div>
 
-          <button id="run-btn" onclick="executePipeline()" class="w-full py-3 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
-            <i class="fa-solid fa-play"></i> Run Automation Pipeline
+          <button id="run-btn" onclick="executePipeline()" class="w-full py-3 px-4 bg-[#45524d] hover:bg-[#52615b] text-[#f4f3ef] font-semibold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm border border-[#5d6e67]">
+            <i class="fa-solid fa-play text-xs"></i> Run Automation Pipeline
           </button>
         </div>
       </div>
 
       <!-- Right Column: Live Output & Demonstrations -->
       <div class="lg:col-span-7 space-y-6">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <div class="bg-[#212529] border border-[#2e353c] rounded-2xl p-6 shadow-xl">
           
           <!-- Output Tabs -->
-          <div class="flex items-center space-x-2 border-b border-slate-800 pb-3 mb-5 text-sm overflow-x-auto">
-            <button onclick="switchTab('ai-tab')" id="btn-ai-tab" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-medium flex items-center gap-2 text-xs">
-              <i class="fa-solid fa-brain"></i> AI Parsing & Scoring
+          <div class="flex items-center space-x-2 border-b border-[#2e353c] pb-3 mb-5 text-sm overflow-x-auto">
+            <button onclick="switchTab('ai-tab')" id="btn-ai-tab" class="px-3 py-1.5 rounded-lg bg-[#45524d] text-[#eceae4] font-medium flex items-center gap-2 text-xs border border-[#5d6e67]">
+              <i class="fa-solid fa-brain text-[#8da399]"></i> AI Parsing & Scoring
             </button>
-            <button onclick="switchTab('crm-tab')" id="btn-crm-tab" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium flex items-center gap-2 text-xs">
-              <i class="fa-solid fa-table-cells"></i> CRM Record
+            <button onclick="switchTab('crm-tab')" id="btn-crm-tab" class="px-3 py-1.5 rounded-lg bg-[#181b1e] text-[#9fa6ad] hover:text-[#eceae4] font-medium flex items-center gap-2 text-xs border border-[#2b3136]">
+              <i class="fa-solid fa-table-cells text-[#7c8f9e]"></i> CRM Record
             </button>
-            <button onclick="switchTab('slack-tab')" id="btn-slack-tab" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium flex items-center gap-2 text-xs">
-              <i class="fa-brands fa-slack"></i> Slack Alert Card
+            <button onclick="switchTab('slack-tab')" id="btn-slack-tab" class="px-3 py-1.5 rounded-lg bg-[#181b1e] text-[#9fa6ad] hover:text-[#eceae4] font-medium flex items-center gap-2 text-xs border border-[#2b3136]">
+              <i class="fa-brands fa-slack text-[#c7b299]"></i> Slack Alert Card
             </button>
-            <button onclick="switchTab('json-tab')" id="btn-json-tab" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium flex items-center gap-2 text-xs">
-              <i class="fa-solid fa-code"></i> n8n JSON Export
+            <button onclick="switchTab('json-tab')" id="btn-json-tab" class="px-3 py-1.5 rounded-lg bg-[#181b1e] text-[#9fa6ad] hover:text-[#eceae4] font-medium flex items-center gap-2 text-xs border border-[#2b3136]">
+              <i class="fa-solid fa-code text-[#9e8e9f]"></i> n8n JSON Export
             </button>
           </div>
 
           <!-- Tab Content 1: AI Qualification -->
           <div id="ai-tab" class="tab-pane space-y-4">
-            <div class="flex items-center justify-between bg-slate-950 p-4 rounded-xl border border-slate-800">
+            <div class="flex items-center justify-between bg-[#181b1e] p-4 rounded-xl border border-[#2e353c]">
               <div>
-                <span class="text-xs text-slate-400">AI Lead Qualification Score</span>
-                <div class="text-2xl font-extrabold text-emerald-400 flex items-center gap-2" id="out-score">
-                  94 <span class="text-xs font-normal text-slate-400">/ 100 (High Priority)</span>
+                <span class="text-xs text-[#9fa6ad]">AI Lead Qualification Score</span>
+                <div class="text-2xl font-extrabold text-[#8da399] flex items-center gap-2 mt-0.5" id="out-score">
+                  94 <span class="text-xs font-normal text-[#9fa6ad]">/ 100 (High Priority)</span>
                 </div>
               </div>
-              <span class="px-3 py-1 text-xs rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" id="out-badge">
+              <span class="px-3 py-1 text-xs rounded-full bg-[#8da399]/15 text-[#8da399] border border-[#8da399]/30 font-medium" id="out-badge">
                 Hot Lead 🔥
               </span>
             </div>
 
-            <div class="space-y-3 text-xs bg-slate-950 p-4 rounded-xl border border-slate-800">
+            <div class="space-y-3 text-xs bg-[#181b1e] p-4 rounded-xl border border-[#2e353c]">
               <div>
-                <span class="font-semibold text-slate-400">Detected Intent Category:</span>
-                <p class="text-slate-200 mt-0.5 text-sm font-medium" id="out-intent">Enterprise Workflow Automation & ERP Integration</p>
+                <span class="font-semibold text-[#9fa6ad]">Detected Intent Category:</span>
+                <p class="text-[#eceae4] mt-0.5 text-sm font-medium" id="out-intent">Enterprise Workflow Automation & ERP Integration</p>
               </div>
               <div>
-                <span class="font-semibold text-slate-400">Executive Summary:</span>
-                <p class="text-slate-300 mt-0.5" id="out-summary">Client requires end-to-end sync across Shopify, ERP, and Slack. Confirmed budget approved for Q3 deployment.</p>
+                <span class="font-semibold text-[#9fa6ad]">Executive Summary:</span>
+                <p class="text-[#d8d5cd] mt-0.5 leading-relaxed" id="out-summary">Client requires end-to-end sync across Shopify, ERP, and Slack. Confirmed budget approved for Q3 deployment.</p>
               </div>
               <div>
-                <span class="font-semibold text-slate-400">AI Recommended Next Action:</span>
-                <p class="text-indigo-300 mt-0.5 font-medium" id="out-action">Assign to Senior Account Exec. Schedule discovery call within 4 hours.</p>
+                <span class="font-semibold text-[#9fa6ad]">AI Recommended Next Action:</span>
+                <p class="text-[#c7b299] mt-0.5 font-medium" id="out-action">Assign to Senior Account Exec. Schedule discovery call within 4 hours.</p>
               </div>
             </div>
           </div>
 
           <!-- Tab Content 2: CRM View -->
           <div id="crm-tab" class="tab-pane hidden space-y-4">
-            <div class="text-xs text-slate-400 mb-2">Simulated Airtable / HubSpot Schema Sync:</div>
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border border-slate-800 rounded-lg overflow-hidden">
-                <thead class="bg-slate-950 text-slate-400 uppercase">
+            <div class="text-xs text-[#9fa6ad] mb-2">Simulated Airtable / HubSpot Schema Sync:</div>
+            <div class="overflow-x-auto border border-[#2e353c] rounded-xl">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-[#181b1e] text-[#9fa6ad] uppercase">
                   <tr>
-                    <th class="p-2.5">Field</th>
-                    <th class="p-2.5">Value</th>
-                    <th class="p-2.5">Status</th>
+                    <th class="p-3">Field</th>
+                    <th class="p-3">Value</th>
+                    <th class="p-3">Status</th>
                   </tr>
                 </thead>
-                <tbody class="divide-y divide-slate-800 bg-slate-900/60">
+                <tbody class="divide-y divide-[#2e353c] bg-[#1d2125]">
                   <tr>
-                    <td class="p-2.5 font-medium text-slate-300">Contact Name</td>
-                    <td class="p-2.5 text-slate-200" id="crm-name">David Miller</td>
-                    <td class="p-2.5 text-emerald-400">✓ Validated</td>
+                    <td class="p-3 font-medium text-[#9fa6ad]">Contact Name</td>
+                    <td class="p-3 text-[#eceae4] font-medium" id="crm-name">David Miller</td>
+                    <td class="p-3 text-[#8da399]">✓ Validated</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 font-medium text-slate-300">Email</td>
-                    <td class="p-2.5 text-slate-200" id="crm-email">david.m@vortexlogistics.com</td>
-                    <td class="p-2.5 text-emerald-400">✓ Deliverable</td>
+                    <td class="p-3 font-medium text-[#9fa6ad]">Email</td>
+                    <td class="p-3 text-[#eceae4]" id="crm-email">david.m@vortexlogistics.com</td>
+                    <td class="p-3 text-[#8da399]">✓ Deliverable</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 font-medium text-slate-300">Lead Stage</td>
-                    <td class="p-2.5 text-indigo-400 font-semibold" id="crm-stage">SQL - Hot Opportunity</td>
-                    <td class="p-2.5 text-emerald-400">✓ Synced</td>
+                    <td class="p-3 font-medium text-[#9fa6ad]">Lead Stage</td>
+                    <td class="p-3 text-[#7c8f9e] font-semibold" id="crm-stage">SQL - Hot Opportunity</td>
+                    <td class="p-3 text-[#8da399]">✓ Synced</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 font-medium text-slate-300">Estimated Value</td>
-                    <td class="p-2.5 text-emerald-400 font-semibold">$5,000 - $12,000</td>
-                    <td class="p-2.5 text-emerald-400">✓ Synced</td>
+                    <td class="p-3 font-medium text-[#9fa6ad]">Estimated Value</td>
+                    <td class="p-3 text-[#c7b299] font-semibold">$5,000 - $12,000</td>
+                    <td class="p-3 text-[#8da399]">✓ Synced</td>
                   </tr>
                 </tbody>
               </table>
@@ -231,17 +254,17 @@
 
           <!-- Tab Content 3: Slack View -->
           <div id="slack-tab" class="tab-pane hidden space-y-4">
-            <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs font-mono space-y-2">
-              <div class="flex items-center gap-2 text-slate-400 border-b border-slate-800 pb-2">
-                <i class="fa-brands fa-slack text-purple-400 text-sm"></i> #sales-instant-alerts &bull; bot &bull; Today at 12:00 PM
+            <div class="bg-[#181b1e] border border-[#2e353c] rounded-xl p-4 text-xs font-mono space-y-2.5">
+              <div class="flex items-center gap-2 text-[#9fa6ad] border-b border-[#2e353c] pb-2">
+                <i class="fa-brands fa-slack text-[#9e8e9f] text-sm"></i> #sales-instant-alerts &bull; bot &bull; Today at 12:00 PM
               </div>
-              <div class="text-slate-200 space-y-1.5 pt-1">
-                <div class="text-sm font-bold text-amber-400">🔥 New High-Priority Inbound Lead Detected</div>
-                <div><span class="text-slate-400">Contact:</span> <strong id="slack-name">David Miller</strong> (<span id="slack-company">Vortex Logistics</span>)</div>
-                <div><span class="text-slate-400">Lead Score:</span> <span class="text-emerald-400 font-bold">94/100</span></div>
-                <div><span class="text-slate-400">Key Need:</span> <span id="slack-summary">Automated sync across Shopify, ERP & Slack with approved Q3 budget.</span></div>
+              <div class="text-[#eceae4] space-y-1.5 pt-1">
+                <div class="text-sm font-bold text-[#c7b299]">🔥 New High-Priority Inbound Lead Detected</div>
+                <div><span class="text-[#9fa6ad]">Contact:</span> <strong id="slack-name">David Miller</strong> (<span id="slack-company">Vortex Logistics</span>)</div>
+                <div><span class="text-[#9fa6ad]">Lead Score:</span> <span class="text-[#8da399] font-bold">94/100</span></div>
+                <div><span class="text-[#9fa6ad]">Key Need:</span> <span id="slack-summary">Automated sync across Shopify, ERP & Slack with approved Q3 budget.</span></div>
                 <div class="pt-2">
-                  <span class="bg-indigo-600/30 text-indigo-300 px-2.5 py-1 rounded text-[11px] border border-indigo-500/30">Action: Auto-assigned to CRM</span>
+                  <span class="bg-[#2b333a] text-[#8da399] px-2.5 py-1 rounded text-[11px] border border-[#3b454f]">Action: Auto-assigned to CRM</span>
                 </div>
               </div>
             </div>
@@ -250,12 +273,12 @@
           <!-- Tab Content 4: n8n Workflow JSON Export -->
           <div id="json-tab" class="tab-pane hidden space-y-4">
             <div class="flex items-center justify-between text-xs">
-              <span class="text-slate-400">Production n8n Node Configuration:</span>
-              <button onclick="copyJSON()" class="text-indigo-400 hover:text-indigo-300 font-medium">
+              <span class="text-[#9fa6ad]">Production n8n Node Configuration:</span>
+              <button onclick="copyJSON()" class="text-[#8da399] hover:text-[#a5b9b0] font-medium transition-colors">
                 <i class="fa-regular fa-copy"></i> Copy JSON
               </button>
             </div>
-            <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-[11px] text-indigo-300 font-mono overflow-x-auto max-h-56" id="json-code">
+            <pre class="bg-[#181b1e] p-4 rounded-xl border border-[#2e353c] text-[11px] text-[#7c8f9e] font-mono overflow-x-auto max-h-56" id="json-code">
 {
   "name": "Production AI Lead & CRM Pipeline",
   "nodes": [
@@ -284,23 +307,22 @@
       const btn = document.getElementById('run-btn');
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Executing n8n Workflow...';
 
-      // Animate workflow nodes sequentially
       const nodes = ['node-1', 'node-2', 'node-3', 'node-4'];
-      nodes.forEach(n => document.getElementById(n).classList.remove('node-active', 'border-indigo-500', 'bg-indigo-950/40'));
+      nodes.forEach(n => document.getElementById(n).classList.remove('node-active'));
 
       let step = 0;
       const interval = setInterval(() => {
         if (step < nodes.length) {
           if (step > 0) document.getElementById(nodes[step - 1]).classList.remove('node-active');
           const curr = document.getElementById(nodes[step]);
-          curr.classList.add('node-active', 'border-indigo-500', 'bg-indigo-950/40');
+          curr.classList.add('node-active');
           step++;
         } else {
           clearInterval(interval);
           nodes.forEach(n => document.getElementById(n).classList.remove('node-active'));
-          btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Execution Finished (200 OK)';
+          btn.innerHTML = '<i class="fa-solid fa-check text-[#8da399]"></i> Execution Finished (200 OK)';
           setTimeout(() => {
-            btn.innerHTML = '<i class="fa-solid fa-play"></i> Run Automation Pipeline';
+            btn.innerHTML = '<i class="fa-solid fa-play text-xs"></i> Run Automation Pipeline';
           }, 2500);
 
           // Update dynamic values
@@ -320,9 +342,9 @@
       tabs.forEach(t => {
         const btn = document.getElementById('btn-' + t);
         if (t === tabId) {
-          btn.className = "px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-medium flex items-center gap-2 text-xs";
+          btn.className = "px-3 py-1.5 rounded-lg bg-[#45524d] text-[#eceae4] font-medium flex items-center gap-2 text-xs border border-[#5d6e67]";
         } else {
-          btn.className = "px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium flex items-center gap-2 text-xs";
+          btn.className = "px-3 py-1.5 rounded-lg bg-[#181b1e] text-[#9fa6ad] hover:text-[#eceae4] font-medium flex items-center gap-2 text-xs border border-[#2b3136]";
         }
       });
     }
